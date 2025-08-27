@@ -1,0 +1,1364 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script> window.FontAwesomeConfig = { autoReplaceSvg: 'nest'};</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/10.3.3/highcharts.js"></script>
+    
+    <style>::-webkit-scrollbar { display: none;}</style>
+    <script>tailwind.config = {
+  "theme": {
+    "extend": {
+      "colors": {
+        "primary": {
+          "50": "#eff6ff",
+          "100": "#dbeafe",
+          "200": "#bfdbfe",
+          "300": "#93c5fd",
+          "400": "#60a5fa",
+          "500": "#3b82f6",
+          "600": "#2563eb",
+          "700": "#1d4ed8",
+          "800": "#1e40af",
+          "900": "#1e3a8a"
+        },
+        "secondary": {
+          "50": "#f0f9ff",
+          "100": "#e0f2fe",
+          "200": "#bae6fd",
+          "300": "#7dd3fc",
+          "400": "#38bdf8",
+          "500": "#0ea5e9",
+          "600": "#0284c7",
+          "700": "#0369a1",
+          "800": "#075985",
+          "900": "#0c4a6e"
+        }
+      },
+      "fontFamily": {
+        "sans": [
+          "Inter",
+          "sans-serif"
+        ]
+      }
+    }
+  }
+};</script>
+    <title>Nexus AI - Custom AI Agent Platform</title>
+    <meta name="description" content="Build, deploy and scale custom AI agents for your enterprise. Nexus AI platform enables businesses to create intelligent virtual assistants tailored to their specific needs.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"><style>
+      body {
+        font-family: 'Inter', sans-serif !important;
+      }
+      
+      /* Preserve Font Awesome icons */
+      .fa, .fas, .far, .fal, .fab {
+        font-family: "Font Awesome 6 Free", "Font Awesome 6 Brands" !important;
+      }
+    </style><style>
+  .highlighted-section {
+    outline: 2px solid #3F20FB;
+    background-color: rgba(63, 32, 251, 0.1);
+  }
+
+  .edit-button {
+    position: absolute;
+    z-index: 1000;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  html, body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+
+  </style></head><body class="bg-slate-900 text-white font-sans">
+    <!-- Header -->
+    <header id="header" class="bg-slate-800 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="flex items-center space-x-2 cursor-pointer">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg flex items-center justify-center">
+                        <i class="text-white text-xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-brain" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="brain" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M184 0c30.9 0 56 25.1 56 56V456c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56V56c0-30.9 25.1-56 56-56z"></path></svg></i>
+                    </div>
+                    <span class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-300">Nexus AI</span>
+                </span>
+            </div>
+            
+            <nav class="hidden lg:flex items-center space-x-8">
+                <div class="relative group">
+                    <span class="text-slate-300 hover:text-blue-400 font-medium flex items-center cursor-pointer">
+                        Solutions
+                        <i class="text-xs ml-1" data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-down" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg></i>
+                    </span>
+                    <div class="absolute left-0 mt-2 w-48 bg-slate-800 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <div class="py-2 px-4">
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Enterprise Solutions</span>
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Customer Service</span>
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Sales Automation</span>
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Knowledge Management</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative group">
+                    <span class="text-slate-300 hover:text-blue-400 font-medium flex items-center cursor-pointer">
+                        Use Cases
+                        <i class="text-xs ml-1" data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-down" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg></i>
+                    </span>
+                    <div class="absolute left-0 mt-2 w-48 bg-slate-800 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <div class="py-2 px-4">
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Financial Services</span>
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Healthcare</span>
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Retail</span>
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Manufacturing</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <span class="text-slate-300 hover:text-blue-400 font-medium cursor-pointer">Pricing</span>
+                
+                <div class="relative group">
+                    <span class="text-slate-300 hover:text-blue-400 font-medium flex items-center cursor-pointer">
+                        Resources
+                        <i class="text-xs ml-1" data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-down" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg></i>
+                    </span>
+                    <div class="absolute left-0 mt-2 w-48 bg-slate-800 rounded-md shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                        <div class="py-2 px-4">
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Blog</span>
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Case Studies</span>
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Whitepapers</span>
+                            <span class="block py-2 text-sm text-slate-300 hover:text-blue-400 cursor-pointer">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <span class="text-slate-300 hover:text-blue-400 font-medium cursor-pointer">About</span>
+            </nav>
+            
+            <div class="hidden lg:flex items-center space-x-4">
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-700">
+                    <i class="text-slate-300 fa-sun" data-fa-i2svg=""><svg class="svg-inline--fa fa-sun" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sun" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M361.5 1.2c5 2.1 8.6 6.6 9.6 11.9L391 121l107.9 19.8c5.3 1 9.8 4.6 11.9 9.6s1.5 10.7-1.6 15.2L446.9 256l62.3 90.3c3.1 4.5 3.7 10.2 1.6 15.2s-6.6 8.6-11.9 9.6L391 391 371.1 498.9c-1 5.3-4.6 9.8-9.6 11.9s-10.7 1.5-15.2-1.6L256 446.9l-90.3 62.3c-4.5 3.1-10.2 3.7-15.2 1.6s-8.6-6.6-9.6-11.9L121 391 13.1 371.1c-5.3-1-9.8-4.6-11.9-9.6s-1.5-10.7 1.6-15.2L65.1 256 2.8 165.7c-3.1-4.5-3.7-10.2-1.6-15.2s6.6-8.6 11.9-9.6L121 121 140.9 13.1c1-5.3 4.6-9.8 9.6-11.9s10.7-1.5 15.2 1.6L256 65.1 346.3 2.8c4.5-3.1 10.2-3.7 15.2-1.6zM160 256a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zm224 0a128 128 0 1 0 -256 0 128 128 0 1 0 256 0z"></path></svg></i>
+                </button>
+                <span class="text-slate-300 hover:text-blue-400 cursor-pointer">Login</span>
+                <span class="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-5 py-2.5 rounded-full font-medium hover:shadow-lg transition duration-300 cursor-pointer">Book a Demo</span>
+            </div>
+            
+            <button class="lg:hidden text-slate-300" id="mobile-menu-button">
+                <i class="text-2xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-bars" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-slate-800 border-t border-slate-700 px-4 py-6">
+            <nav class="flex flex-col space-y-4">
+                <span class="text-slate-300 hover:text-blue-400 font-medium py-2 cursor-pointer">Solutions</span>
+                <span class="text-slate-300 hover:text-blue-400 font-medium py-2 cursor-pointer">Use Cases</span>
+                <span class="text-slate-300 hover:text-blue-400 font-medium py-2 cursor-pointer">Pricing</span>
+                <span class="text-slate-300 hover:text-blue-400 font-medium py-2 cursor-pointer">Resources</span>
+                <span class="text-slate-300 hover:text-blue-400 font-medium py-2 cursor-pointer">About</span>
+                <div class="pt-4 border-t border-slate-700">
+                    <span class="block text-slate-300 hover:text-blue-400 font-medium py-2 cursor-pointer">Login</span>
+                    <span class="block bg-gradient-to-r from-blue-600 to-blue-500 text-white px-5 py-2.5 rounded-full font-medium text-center mt-4 hover:shadow-lg transition duration-300 cursor-pointer">Book a Demo</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="bg-slate-800 overflow-hidden relative h-[700px]">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-blue-800/20 opacity-50"></div>
+        <div class="absolute -right-10 top-20 w-[600px] h-[600px] bg-gradient-to-br from-blue-600/10 to-blue-500/10 rounded-full blur-3xl"></div>
+        <div class="absolute -left-10 bottom-20 w-[400px] h-[400px] bg-gradient-to-tr from-blue-500/10 to-blue-600/10 rounded-full blur-3xl"></div>
+        
+        <div class="container mx-auto px-4 py-20 h-full flex flex-col justify-center relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="inline-block py-1 px-3 bg-blue-900/30 text-blue-300 rounded-full text-sm font-medium mb-6">
+                        Enterprise AI Solutions
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                        Custom AI Agents <br class="hidden lg:block">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-300">
+                            Built for Enterprise
+                        </span>
+                    </h1>
+                    <p class="text-lg text-slate-300 mb-8 max-w-lg">
+                        Create intelligent virtual assistants tailored to your business needs. Automate tasks, enhance customer experiences, and drive operational efficiency with our enterprise-grade AI platform.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <span class="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-8 py-3.5 rounded-full font-medium text-center hover:shadow-lg transition duration-300 cursor-pointer">
+                            Book a Demo
+                        </span>
+                        <span class="bg-slate-700 text-slate-200 border border-slate-600 px-8 py-3.5 rounded-full font-medium text-center hover:shadow-lg transition duration-300 cursor-pointer">
+                            <i class="mr-2 text-blue-400" data-fa-i2svg=""><svg class="svg-inline--fa fa-bell" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bell" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224 0c-17.7 0-32 14.3-32 32V51.2C119 66 64 130.6 64 208v18.8c0 47-17.3 92.4-48.5 127.6l-7.4 8.3c-8.4 9.4-10.4 22.9-5.3 34.4S19.4 416 32 416H416c12.6 0 24-7.4 29.2-18.9s3.1-25-5.3-34.4l-7.4-8.3C401.3 319.2 384 273.9 384 226.8V208c0-77.4-55-142-128-156.8V32c0-17.7-14.3-32-32-32zm45.3 493.3c12-12 18.7-28.3 18.7-45.3H224 160c0 17 6.7 33.3 18.7 45.3s28.3 18.7 45.3 18.7s33.3-6.7 45.3-18.7z"></path></svg></i> Subscribe Now
+                        </span>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-gray-700 rounded-2xl shadow-xl p-6 relative z-10">
+                        <img class="w-full rounded-xl" src="Truck Main.jpg" alt="3D illustration of AI agent dashboard with chatbot interface, data visualization, and floating elements showing an enterprise AI platform with blue and purple gradient elements, professional UI design">
+                        
+                        <div class="absolute -right-4 top-1/4 bg-slate-800 rounded-lg shadow-lg p-4 max-w-xs border border-slate-600" style="top:36%; right: -3rem; " >
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <i class="text-blue-400 mr-2" data-fa-i2svg=""><svg class="svg-inline--fa fa-robot" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="robot" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M320 0c17.7 0 32 14.3 32 32V96H472c39.8 0 72 32.2 72 72V440c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72H288V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224H64V416H48c-26.5 0-48-21.5-48-48V272c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H576V224h16z"></path></svg></i>
+                                    <span class="font-medium text-white">Nexus Assistant</span>
+                                </div>
+                                <i class="text-slate-500" data-fa-i2svg=""><svg class="svg-inline--fa fa-xmark" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="xmark" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" data-fa-i2svg=""><path fill="currentColor" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"></path></svg></i>
+                            </div>
+                            <div class="space-y-3">
+                                <p class="text-sm bg-slate-700 text-slate-200 p-2 rounded-lg rounded-tl-none">
+                                    How can I help you today?
+                                </p>
+                                <p class="text-sm bg-blue-800 text-blue-100 p-2 rounded-lg rounded-tr-none ml-auto max-w-[80%]">
+                                    I need to automate our customer support
+                                </p>
+                                <p class="text-sm bg-slate-700 text-slate-200 p-2 rounded-lg rounded-tl-none">
+                                    I can help with that! Our AI agents can reduce response times by 75% and handle up to 80% of routine inquiries.
+                                </p>
+                            </div>
+                            <div class="mt-3 flex">
+                                <input type="text" placeholder="Type your message..." class="flex-1 text-sm bg-slate-600 text-white border border-slate-500 rounded-full px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <button class="ml-2 bg-blue-600 text-white rounded-full p-2">
+                                    <i data-fa-i2svg=""><svg class="svg-inline--fa fa-paper-plane" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="paper-plane" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480V396.4c0-4 1.5-7.8 4.2-10.7L331.8 202.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8 17.7 316.6C7.1 311.3 .3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"></path></svg></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -z-10 -bottom-10 -right-10 w-72 h-72 bg-gradient-to-br from-blue-600/20 to-blue-500/20 rounded-full blur-2xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trusted By Section -->
+    <section id="trusted-by" class="py-16 bg-slate-900">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl font-bold text-white mb-2">Integration available with our AI Agents</h2>
+            <p class="text-slate-300">Custom AI Agent development can support your custom tools or other all standard tools</p>
+        </div>
+        <div class="relative overflow-hidden">
+            <div class="flex space-x-8 animate-scroll-left">
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-microsoft text-2xl text-blue-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-google text-2xl text-red-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-salesforce text-2xl text-blue-500"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-slack text-2xl text-purple-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-aws text-2xl text-orange-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-hubspot text-2xl text-orange-500"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-shopify text-2xl text-green-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-stripe text-2xl text-blue-300"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-discord text-2xl text-indigo-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-mailchimp text-2xl text-yellow-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-github text-2xl text-slate-300"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-jira text-2xl text-blue-500"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-confluence text-2xl text-blue-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-trello text-2xl text-blue-600"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-asana text-2xl text-pink-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-notion text-2xl text-slate-300"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-zendesk text-2xl text-green-500"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-intercom text-2xl text-blue-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-dropbox text-2xl text-blue-500"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-figma text-2xl text-purple-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-adobe text-2xl text-red-500"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-docker text-2xl text-blue-400"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-jenkins text-2xl text-blue-600"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-wordpress text-2xl text-blue-500"></i>
+                </div>
+                <div class="flex items-center justify-center w-16 h-16 bg-slate-800 rounded-lg flex-shrink-0 hover:bg-slate-700 transition duration-300">
+                    <i class="fab fa-woocommerce text-2xl text-purple-500"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        .animate-scroll-left {
+            animation: scroll-left 30s linear infinite;
+            width: calc(100px * 25);
+        }
+        
+        .animate-scroll-left:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-choose-us" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+                    Why Nexus AI
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Transform Your Business with AI</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                    Our platform enables enterprises to deploy custom AI agents that drive efficiency and enhance customer experiences
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div id="benefit-card-1" class="bg-slate-800 rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="text-blue-600 text-2xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-bolt" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bolt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M349.4 44.6c5.9-13.7 1.5-29.7-10.6-38.5s-28.6-8-39.9 1.8l-256 224c-10 8.8-13.6 22.9-8.9 35.3S50.7 288 64 288H175.5L98.6 467.4c-5.9 13.7-1.5 29.7 10.6 38.5s28.6 8 39.9-1.8l256-224c10-8.8 13.6-22.9 8.9-35.3s-16.6-20.7-30-20.7H272.5L349.4 44.6z"></path></svg></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Rapid Deployment</h3>
+                    <p class="text-slate-300">
+                        Get your custom AI agents up and running in days, not months, with our no-code platform.
+                    </p>
+                </div>
+                
+                <div id="benefit-card-2" class="bg-slate-800 rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-secondary-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="text-secondary-600 text-2xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-brain" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="brain" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M184 0c30.9 0 56 25.1 56 56V456c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56V56c0-30.9 25.1-56 56-56z"></path></svg></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Enterprise-Grade AI</h3>
+                    <p class="text-slate-300">
+                        Advanced machine learning models trained specifically for your industry and use cases.
+                    </p>
+                </div>
+                
+                <div id="benefit-card-3" class="bg-slate-800 rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="text-blue-600 text-2xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-shield-halved" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="shield-halved" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8V444.8C394 378 431.1 230.1 432 141.4L256 66.8l0 0z"></path></svg></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Secure &amp; Compliant</h3>
+                    <p class="text-slate-300">
+                        Enterprise-level security with SOC 2, GDPR, and HIPAA compliance built into our platform.
+                    </p>
+                </div>
+                
+                <div id="benefit-card-4" class="bg-slate-800 rounded-xl shadow-sm p-6 hover:shadow-md transition duration-300">
+                    <div class="w-14 h-14 bg-green-100 rounded-lg flex items-center justify-center mb-6">
+                        <i class="text-green-600 text-2xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-chart-line" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chart-line" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"></path></svg></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Measurable ROI</h3>
+                    <p class="text-slate-300">
+                        Track performance metrics and see tangible business results with our analytics dashboard.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+                    How It Works
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Simple 3-Step Process</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                    Our platform makes it easy to create, deploy, and scale custom AI agents for your business
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Connection Line -->
+              
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 relative z-10">
+                    <div id="step-1" class="text-center">
+                        <div class="w-20 h-20 bg-slate-800 border-2 border-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                            <span class="text-xl font-bold text-blue-600">1</span>
+                            <div class="absolute -right-3 -top-3 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                                <i class="text-white fa-solid fa-wand-magic-sparkles"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Design Your Agent</h3>
+                        <p class="text-slate-300 mb-6">
+                            Use our no-code builder to design your AI agent's capabilities, knowledge base, and conversation flows.
+                        </p>
+                    </div>
+                    
+                    <div id="step-2" class="text-center">
+                        <div class="w-20 h-20 bg-slate-800 border-2 border-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                            <span class="text-xl font-bold text-blue-600">2</span>
+                            <div class="absolute -right-3 -top-3 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                                <i class="text-white fa-solid fa-code-branch"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Train &amp; Integrate</h3>
+                        <p class="text-slate-300 mb-6">
+                            Connect to your data sources, train your AI on your specific use cases, and integrate with your existing systems.
+                        </p>
+                    </div>
+                    
+                    <div id="step-3" class="text-center">
+                        <div class="w-20 h-20 bg-slate-800 border-2 border-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+                            <span class="text-xl font-bold text-blue-600">3</span>
+                            <div class="absolute -right-3 -top-3 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
+                                <i class="text-white fa-solid fa-rocket"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Deploy &amp; Scale</h3>
+                        <p class="text-slate-300 mb-6">
+                            Launch your AI agent across channels and scale as needed. Monitor performance and continuously improve.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                    Learn more about our implementation process
+                    <i class="ml-2 fa-solid fa-arrow-right"></i>
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section id="use-cases" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+                    Use Cases
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">AI Solutions for Every Industry</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                    Discover how our AI platform can transform operations across different sectors
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div id="usecase-1" class="bg-slate-800 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/bbe30dcfb5-839abe97f3382175ea40.png" alt="financial services banking AI assistant helping customer with investments on digital platform, professional corporate setting">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Financial Services</h3>
+                        <p class="text-slate-300 mb-4">
+                            AI agents that assist with investment advice, fraud detection, and personalized banking services.
+                        </p>
+                        <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                            Learn more
+                            <i class="ml-2" data-fa-i2svg=""><svg class="svg-inline--fa fa-arrow-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div id="usecase-2" class="bg-slate-800 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/ed22f58b01-8b5966a6b963df41f049.png" alt="healthcare AI assistant helping doctor analyze medical records and patient data, professional medical setting">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Healthcare</h3>
+                        <p class="text-slate-300 mb-4">
+                            Streamline patient care, assist with diagnosis, and automate administrative tasks with HIPAA-compliant AI.
+                        </p>
+                        <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                            Learn more
+                            <i class="ml-2" data-fa-i2svg=""><svg class="svg-inline--fa fa-arrow-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div id="usecase-3" class="bg-slate-800 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/21ae251b71-c24bb008e75e926f98ff.png" alt="retail AI assistant helping customer find products and make purchasing decisions on digital shopping platform">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Retail &amp; E-commerce</h3>
+                        <p class="text-slate-300 mb-4">
+                            Enhance customer shopping experiences with personalized recommendations and 24/7 support.
+                        </p>
+                        <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                            Learn more
+                            <i class="ml-2" data-fa-i2svg=""><svg class="svg-inline--fa fa-arrow-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div id="usecase-4" class="bg-slate-800 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/dadae5a7b4-1652ce77fc8d8607d625.png" alt="manufacturing AI system monitoring factory equipment and production line, industrial setting">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Manufacturing</h3>
+                        <p class="text-slate-300 mb-4">
+                            Optimize production processes, predict maintenance needs, and improve quality control with AI.
+                        </p>
+                        <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                            Learn more
+                            <i class="ml-2" data-fa-i2svg=""><svg class="svg-inline--fa fa-arrow-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div id="usecase-5" class="bg-slate-800 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/d16105a96c-54c2fa5ef2f5e4f9ac91.png" alt="customer service AI chatbot helping multiple customers simultaneously on digital platform">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Customer Service</h3>
+                        <p class="text-slate-300 mb-4">
+                            Provide 24/7 support, reduce response times, and escalate complex issues to human agents seamlessly.
+                        </p>
+                        <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                            Learn more
+                            <i class="ml-2" data-fa-i2svg=""><svg class="svg-inline--fa fa-arrow-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div id="usecase-6" class="bg-slate-800 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img class="w-full h-full object-cover" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/7d66763ba8-18915053780b6d3caf0d.png" alt="insurance AI assistant analyzing claims and helping customer with policy questions, professional corporate setting">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3">Insurance</h3>
+                        <p class="text-slate-300 mb-4">
+                            Accelerate claims processing, detect fraud, and provide personalized policy recommendations.
+                        </p>
+                        <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                            Learn more
+                            <i class="ml-2" data-fa-i2svg=""><svg class="svg-inline--fa fa-arrow-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Highlights -->
+    <section id="feature-highlights" class="py-20 bg-slate-900">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <span class="inline-block py-1 px-3 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+                Platform Features
+            </span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Powerful AI Capabilities</h2>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                Our platform provides everything you need to build and deploy enterprise-grade AI agents
+            </p>
+        </div>
+        
+        <!-- Feature Tabs -->
+        <div class="mb-12">
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8 flex-wrap">
+                <button class="feature-tab active bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition duration-300" data-feature="workflow">
+                    Intelligent Workflow Automation
+                </button>
+                <button class="feature-tab bg-slate-700 text-slate-300 px-6 py-3 rounded-lg font-medium hover:bg-slate-600 transition duration-300" data-feature="agentic-layer">
+                    Agentic Workflow Layer
+                </button>
+                <button class="feature-tab bg-slate-700 text-slate-300 px-6 py-3 rounded-lg font-medium hover:bg-slate-600 transition duration-300" data-feature="architecture">
+                    Scalable AI Architecture
+                </button>
+                <button class="feature-tab bg-slate-700 text-slate-300 px-6 py-3 rounded-lg font-medium hover:bg-slate-600 transition duration-300" data-feature="analytics">
+                    Measure Performance &amp; Improve
+                </button>
+            </div>
+            
+            <!-- Feature Content -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="order-1">
+                    <div id="feature-image" class="bg-gradient-to-br from-blue-900/20 to-blue-900/20 p-4 rounded-2xl" style="height: 416px; margin-left: 185px">
+                        <img  class="w-full h-auto object-contain rounded-xl shadow-lg" src="Object.jpg" alt="Diagram of an agentic orchestration core showing reasoning module, memory module, toolset, and human in the loop, minimalist 3D isometric style, pink and yellow components on a light background, professional UI design">
+                    </div>
+                </div>
+                
+                <!-- Content Side -->
+                <div class="order-2">
+                    <div id="workflow-content" class="feature-content">
+                        <span class="inline-block py-1 px-3 bg-blue-100/10 text-blue-300 rounded-full text-sm font-medium mb-4">
+                            Agentic AI Workflow
+                        </span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Intelligent Workflow Automation</h3>
+                        <p class="text-lg text-slate-300 mb-6">
+                            Create sophisticated AI workflows that can handle complex multi-step processes, make decisions, and coordinate between different systems automatically.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Multi-agent orchestration</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Intelligent task routing and prioritization</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Automated decision making with business rules</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Real-time workflow monitoring and optimization</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="agentic-layer-content" class="feature-content hidden">
+                        <span class="inline-block py-1 px-3 bg-yellow-100/10 text-yellow-300 rounded-full text-sm font-medium mb-4">
+                            Orchestration Core
+                        </span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Agentic Workflow Layer</h3>
+                        <p class="text-lg text-slate-300 mb-6">
+                            An advanced execution engine that plans, executes, and monitors workflows based on LLM reasoning and control flow for unparalleled autonomy.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Reasoning module for LLM-driven planning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Multi-layered memory for contextual awareness</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Extensive toolset for diverse integrations &amp; functions</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Human-in-the-loop for seamless collaboration</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="architecture-content" class="feature-content hidden">
+                        <span class="inline-block py-1 px-3 bg-purple-100/10 text-purple-300 rounded-full text-sm font-medium mb-4">
+                            AI Agent Architecture
+                        </span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Scalable AI Architecture</h3>
+                        <p class="text-lg text-slate-300 mb-6">
+                            Built on a modern microservices architecture that scales with your business needs while maintaining high performance and reliability.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Microservices-based architecture for scalability</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Advanced NLP and machine learning engines</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Distributed knowledge management system</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">High-availability deployment options</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="analytics-content" class="feature-content hidden">
+                        <span class="inline-block py-1 px-3 bg-green-100/10 text-green-300 rounded-full text-sm font-medium mb-4">
+                            Analytics &amp; Insights
+                        </span>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">Measure Performance &amp; Improve</h3>
+                        <p class="text-lg text-slate-300 mb-6">
+                            Comprehensive analytics dashboard provides visibility into your AI agents' performance, user satisfaction, and business impact.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Real-time performance monitoring</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Conversation analytics and sentiment analysis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">AI model performance metrics</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                <span class="text-slate-300">Custom reports and dashboards</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Feature tabs functionality
+        const featureTabs = document.querySelectorAll('.feature-tab');
+        const featureContents = document.querySelectorAll('.feature-content');
+        const featureImageContainer = document.getElementById('feature-image');
+        
+        const featureData = {
+            workflow: {
+                image: 'agentic AI workflow automation diagram showing multiple AI agents coordinating tasks, decision points, and automated processes with connecting arrows and data flow',
+                alt: 'Agentic AI workflow automation diagram',
+                background: 'bg-gradient-to-br from-blue-900/20 to-blue-800/20'
+            },
+            'agentic-layer': {
+                image: 'Diagram of an agentic orchestration core showing reasoning module, memory module, toolset, and human in the loop, minimalist 3D isometric style, pink and yellow components on a light background, professional UI design',
+                alt: 'Agentic workflow layer diagram',
+                background: 'bg-gradient-to-br from-yellow-900/20 to-pink-900/20'
+            },
+            architecture: {
+                image: 'AI agent architecture diagram showing microservices, API layers, knowledge base, NLP engine, and integration components in a technical system architecture',
+                alt: 'Scalable AI architecture diagram',
+                background: 'bg-gradient-to-br from-purple-900/20 to-indigo-900/20'
+            },
+            analytics: {
+                image: 'AI analytics dashboard with performance metrics, charts, and insights visualization for enterprise platform',
+                alt: 'AI analytics dashboard',
+                background: 'bg-gradient-to-br from-green-900/20 to-teal-900/20'
+            }
+        };
+        
+        featureTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const feature = tab.dataset.feature;
+                
+                // Update tab styles
+                featureTabs.forEach(t => {
+                    t.classList.remove('active', 'bg-blue-600', 'text-white');
+                    t.classList.add('bg-slate-700', 'text-slate-300');
+                });
+                tab.classList.add('active', 'bg-blue-600', 'text-white');
+                tab.classList.remove('bg-slate-700', 'text-slate-300');
+                
+                // Update content
+                featureContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+                document.getElementById(`${feature}-content`).classList.remove('hidden');
+                
+                // Update image
+                const data = featureData[feature];
+                featureImageContainer.className = `${data.background} p-4 rounded-2xl`;
+                const newImage = `<img class="w-full h-auto object-contain rounded-xl shadow-lg" src="Object.jpg" alt="${data.image}" />`;
+                featureImageContainer.innerHTML = newImage;
+            });
+        });
+        
+        // Initialize with the first tab's data
+        const initialFeature = featureTabs[0].dataset.feature;
+        const initialData = featureData[initialFeature];
+        const initialImage = `<img class="w-full h-auto object-contain rounded-xl shadow-lg" src="Object.jpg" alt="${initialData.image}" />`;
+        featureImageContainer.innerHTML = initialImage;
+        featureImageContainer.className = `${initialData.background} p-4 rounded-2xl`;
+
+    </script>
+</section>
+
+    <!-- Agentic AI Workflows Section -->
+    <section id="agentic-workflows" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+                    Agentic AI Workflows
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Intelligent Automation Workflows</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                    Discover powerful AI workflows that transform your business operations
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-1">
+                    <div class="bg-slate-800 rounded-xl p-4">
+                        <div class="workflow-tab active bg-blue-600 text-white p-4 rounded-lg mb-3 cursor-pointer" data-workflow="freight-tracking">
+                            <i class="mr-3 fas fa-truck"></i>
+                            <span class="font-medium">Freight Tracking</span>
+                        </div>
+                        <div class="workflow-tab bg-slate-700 text-slate-300 p-4 rounded-lg mb-3 cursor-pointer hover:bg-slate-600" data-workflow="order-creation">
+                            <i class="mr-3 fas fa-file-plus"></i>
+                            <span class="font-medium">Order Creation</span>
+                        </div>
+                        <div class="workflow-tab bg-slate-700 text-slate-300 p-4 rounded-lg mb-3 cursor-pointer hover:bg-slate-600" data-workflow="rate-quoting">
+                            <i class="mr-3 fas fa-calculator"></i>
+                            <span class="font-medium">Rate Quoting</span>
+                        </div>
+                        <div class="workflow-tab bg-slate-700 text-slate-300 p-4 rounded-lg mb-3 cursor-pointer hover:bg-slate-600" data-workflow="rerouting">
+                            <i class="mr-3 fas fa-route"></i>
+                            <span class="font-medium">Re-routing/Re-planning</span>
+                        </div>
+                        <div class="workflow-tab bg-slate-700 text-slate-300 p-4 rounded-lg cursor-pointer hover:bg-slate-600" data-workflow="trip-creation">
+                            <i class="mr-3 fas fa-map-marked-alt"></i>
+                            <span class="font-medium">Intelligent Trip Creation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <!-- Image Column -->
+                        <div class="bg-slate-800 rounded-xl shadow-sm overflow-hidden">
+                            <div class="h-80 overflow-hidden" style="height: 27rem">
+                                <img id="workflow-image" class="w-full h-full object-cover" src="ABC.png" alt="AI-powered freight tracking dashboard showing real-time shipment locations, delivery status, and automated notifications">
+                            </div>
+                        </div>
+                        
+                        <!-- Content Column -->
+                        <div class="bg-slate-800 rounded-xl shadow-sm p-8">
+                            <div id="freight-tracking-content" class="workflow-content">
+                                <h3 class="text-2xl font-bold text-white mb-4">Freight Tracking</h3>
+                                <p class="text-lg text-slate-300 mb-6">
+                                    Real-time tracking and monitoring of freight shipments with AI-powered predictive analytics and automated notifications.
+                                </p>
+                                <ul class="space-y-3 mb-6">
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Real-time GPS tracking and location updates</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Predictive delivery time estimation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Automated exception alerts and notifications</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Multi-carrier integration and visibility</span>
+                                    </li>
+                                </ul>
+                                <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                                    Learn more
+                                    <i class="ml-2 fas fa-arrow-right"></i>
+                                </span>
+                            </div>
+                            
+                            <div id="order-creation-content" class="workflow-content hidden">
+                                <h3 class="text-2xl font-bold text-white mb-4">Order Creation</h3>
+                                <p class="text-lg text-slate-300 mb-6">
+                                    Streamlined order creation process with AI-assisted validation, optimization, and automated workflow routing.
+                                </p>
+                                <ul class="space-y-3 mb-6">
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Intelligent form auto-completion</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Real-time validation and error prevention</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Automated approval workflows</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Integration with inventory and pricing systems</span>
+                                    </li>
+                                </ul>
+                                <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                                    Learn more
+                                    <i class="ml-2 fas fa-arrow-right"></i>
+                                </span>
+                            </div>
+                            
+                            <div id="rate-quoting-content" class="workflow-content hidden">
+                                <h3 class="text-2xl font-bold text-white mb-4">Rate Quoting</h3>
+                                <p class="text-lg text-slate-300 mb-6">
+                                    AI-powered rate calculation and quoting system that considers multiple factors for optimal pricing strategies.
+                                </p>
+                                <ul class="space-y-3 mb-6">
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Dynamic pricing based on market conditions</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Multi-carrier rate comparison</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Automated quote generation and delivery</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Historical data analysis for pricing optimization</span>
+                                    </li>
+                                </ul>
+                                <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                                    Learn more
+                                    <i class="ml-2 fas fa-arrow-right"></i>
+                                </span>
+                            </div>
+                            
+                            <div id="rerouting-content" class="workflow-content hidden">
+                                <h3 class="text-2xl font-bold text-white mb-4">Re-routing/Re-planning</h3>
+                                <p class="text-lg text-slate-300 mb-6">
+                                    Intelligent route optimization and dynamic re-planning capabilities that adapt to real-time conditions and disruptions.
+                                </p>
+                                <ul class="space-y-3 mb-6">
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Real-time traffic and weather monitoring</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Automated alternative route suggestions</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Cost-benefit analysis for route changes</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Stakeholder notification and approval workflows</span>
+                                    </li>
+                                </ul>
+                                <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                                    Learn more
+                                    <i class="ml-2 fas fa-arrow-right"></i>
+                                </span>
+                            </div>
+                            
+                            <div id="trip-creation-content" class="workflow-content hidden">
+                                <h3 class="text-2xl font-bold text-white mb-4">Intelligent Trip Creation</h3>
+                                <p class="text-lg text-slate-300 mb-6">
+                                    AI-driven trip planning and optimization that maximizes efficiency while minimizing costs and delivery times.
+                                </p>
+                                <ul class="space-y-3 mb-6">
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Optimal route planning and sequencing</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Load consolidation and optimization</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Driver assignment and scheduling</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="text-green-500 mt-1 mr-3 fa-solid fa-check"></i>
+                                        <span class="text-slate-300">Compliance and regulatory checks</span>
+                                    </li>
+                                </ul>
+                                <span class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 cursor-pointer">
+                                    Learn more
+                                    <i class="ml-2 fas fa-arrow-right"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            // Workflow tabs functionality
+            const workflowTabs = document.querySelectorAll('.workflow-tab');
+            const workflowContents = document.querySelectorAll('.workflow-content');
+            const workflowImage = document.getElementById('workflow-image');
+            
+            const workflowData = {
+                'freight-tracking': {
+                    image: 'ABC.png',
+                    alt: 'AI-powered freight tracking dashboard showing real-time shipment locations, delivery status, and automated notifications'
+                },
+                'order-creation': {
+                    image: 'ABC.png',
+                    alt: 'AI-assisted order creation interface with intelligent form completion and validation features'
+                },
+                'rate-quoting': {
+                    image: 'ABC.png',
+                    alt: 'Dynamic rate quoting system with AI-powered pricing optimization and multi-carrier comparison'
+                },
+                'rerouting': {
+                    image: 'ABC.png',
+                    alt: 'Intelligent re-routing dashboard showing alternative routes, traffic conditions, and optimization suggestions'
+                },
+                'trip-creation': {
+                    image: 'ABC.png',
+                    alt: 'AI-driven trip planning interface with route optimization, load consolidation, and scheduling features'
+                }
+            };
+            
+            workflowTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const workflow = tab.dataset.workflow;
+                    
+                    // Update tab styles
+                    workflowTabs.forEach(t => {
+                        t.classList.remove('active', 'bg-blue-600', 'text-white');
+                        t.classList.add('bg-slate-700', 'text-slate-300');
+                    });
+                    tab.classList.add('active', 'bg-blue-600', 'text-white');
+                    tab.classList.remove('bg-slate-700', 'text-slate-300');
+                    
+                    // Update content
+                    workflowContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    document.getElementById(`${workflow}-content`).classList.remove('hidden');
+                    
+                    // Update image
+                    const data = workflowData[workflow];
+                    workflowImage.src = data.image;
+                    workflowImage.alt = data.alt;
+                });
+            });
+        </script>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-slate-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-4">
+                    Customer Success
+                </span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">What Our Clients Say</h2>
+                <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                    Hear from enterprises that have transformed their operations with our AI platform
+                </p>
+            </div>
+            
+            <div id="testimonial-carousel" class="relative">
+                <div class="overflow-hidden">
+                    <div class="flex transition-transform duration-500" id="testimonial-slider" style="transform: translateX(-832px);">
+                        <!-- Testimonial 1 -->
+                        <div class="w-full lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-slate-800 rounded-xl shadow-sm p-8 h-full">
+                                <div class="flex items-center mb-6">
+                                    <div class="text-amber-400 flex">
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                    </div>
+                                </div>
+                                <blockquote class="text-slate-300 mb-6">
+                                    "Nexus AI has transformed our customer service operations. We've reduced response times by 75% and our customer satisfaction scores have increased by 30%. The platform was easy to implement and the team provided exceptional support throughout."
+                                </blockquote>
+                                <div class="flex items-center">
+                                    <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-2.jpg" alt="John Smith" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <p class="font-medium text-white">John Smith</p>
+                                        <p class="text-sm text-slate-300">CTO, Global Financial Services</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 2 -->
+                        <div class="w-full lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-slate-800 rounded-xl shadow-sm p-8 h-full">
+                                <div class="flex items-center mb-6">
+                                    <div class="text-amber-400 flex">
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                    </div>
+                                </div>
+                                <blockquote class="text-slate-300 mb-6">
+                                    "As a healthcare provider, data security and compliance are critical. Nexus AI not only met our stringent requirements but also helped us automate patient intake and follow-up processes, allowing our staff to focus on delivering care."
+                                </blockquote>
+                                <div class="flex items-center">
+                                    <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-5.jpg" alt="Sarah Johnson" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <p class="font-medium text-white">Sarah Johnson</p>
+                                        <p class="text-sm text-slate-300">Director of Innovation, MedTech Solutions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Testimonial 3 -->
+                        <div class="w-full lg:w-1/3 flex-shrink-0 px-4">
+                            <div class="bg-slate-800 rounded-xl shadow-sm p-8 h-full">
+                                <div class="flex items-center mb-6">
+                                    <div class="text-amber-400 flex">
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg></i>
+                                        <i data-fa-i2svg=""><svg class="svg-inline--fa fa-star-half" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star-half" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M288 0c-12.2 .1-23.3 7-28.6 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3L288 439.8V0zM429.9 512c1.1 .1 2.1 .1 3.2 0h-3.2z"></path></svg></i>
+                                    </div>
+                                </div>
+                                <blockquote class="text-slate-300 mb-6">
+                                    "The no-code platform allowed our business team to create and deploy AI agents without relying on IT resources. We've seen a 40% increase in sales conversions and have been able to scale our operations without adding headcount."
+                                </blockquote>
+                                <div class="flex items-center">
+                                    <img src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-3.jpg" alt="Michael Chen" class="w-12 h-12 rounded-full mr-4">
+                                    <div>
+                                        <p class="font-medium text-white">Michael Chen</p>
+                                        <p class="text-sm text-slate-300">VP of Digital, Retail Innovations Inc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carousel Controls -->
+                <div class="flex justify-center mt-8 space-x-2">
+                    <button class="w-3 h-3 rounded-full bg-slate-300" data-slide="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-slate-300" data-slide="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-blue-300" data-slide="2"></button>
+                </div>
+                
+                <button class="absolute top-1/2 -left-4 transform -translate-y-1/2 bg-slate-800 rounded-full p-3 shadow-md text-slate-300 hover:text-blue-600 lg:flex hidden" id="prev-testimonial">
+                    <i data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-left" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"></path></svg></i>
+                </button>
+                <button class="absolute top-1/2 -right-4 transform -translate-y-1/2 bg-slate-800 rounded-full p-3 shadow-md text-slate-300 hover:text-blue-600 lg:flex hidden" id="next-testimonial">
+                    <i data-fa-i2svg=""><svg class="svg-inline--fa fa-chevron-right" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" data-fa-i2svg=""><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call-to-Action Banner -->
+    <section id="cta-banner" class="py-16 bg-gradient-to-r from-blue-600 to-blue-500 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Business with AI?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">
+                Join hundreds of enterprises using our platform to build and deploy custom AI agents.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <span class="bg-white text-blue-700 px-8 py-3.5 rounded-full font-medium text-center hover:shadow-lg transition duration-300 cursor-pointer">
+                    Book a Demo
+                </span>
+                <span class="bg-transparent border-2 border-white text-white px-8 py-3.5 rounded-full font-medium text-center hover:bg-white/10 transition duration-300 cursor-pointer">
+                    Start Free Trial
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-slate-900 text-slate-400 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+                <div class="lg:col-span-2">
+                    <span class="flex items-center space-x-2 mb-6 cursor-pointer">
+                        <div class="w-10 h-10 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg flex items-center justify-center">
+                            <i class="text-white text-xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-brain" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="brain" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M184 0c30.9 0 56 25.1 56 56V456c0 30.9-25.1 56-56 56c-28.9 0-52.7-21.9-55.7-50.1c-5.2 1.4-10.7 2.1-16.3 2.1c-35.3 0-64-28.7-64-64c0-7.4 1.3-14.6 3.6-21.2C21.4 367.4 0 338.2 0 304c0-31.9 18.7-59.5 45.8-72.3C37.1 220.8 32 207 32 192c0-30.7 21.6-56.3 50.4-62.6C80.8 123.9 80 118 80 112c0-29.9 20.6-55.1 48.3-62.1C131.3 21.9 155.1 0 184 0zM328 0c28.9 0 52.6 21.9 55.7 49.9c27.8 7 48.3 32.1 48.3 62.1c0 6-.8 11.9-2.4 17.4c28.8 6.2 50.4 31.9 50.4 62.6c0 15-5.1 28.8-13.8 39.7C493.3 244.5 512 272.1 512 304c0 34.2-21.4 63.4-51.6 74.8c2.3 6.6 3.6 13.8 3.6 21.2c0 35.3-28.7 64-64 64c-5.6 0-11.1-.7-16.3-2.1c-3 28.2-26.8 50.1-55.7 50.1c-30.9 0-56-25.1-56-56V56c0-30.9 25.1-56 56-56z"></path></svg></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Nexus AI</span>
+                    </span>
+                    <p class="mb-6">
+                        Enterprise-grade AI platform for building custom AI agents that transform how businesses operate and serve their customers.
+                    </p>
+                    <div class="flex space-x-4">
+                        <span class="text-slate-400 hover:text-white cursor-pointer">
+                            <i class="text-xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-twitter" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></i>
+                        </span>
+                        <span class="text-slate-400 hover:text-white cursor-pointer">
+                            <i class="text-xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-linkedin" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg></i>
+                        </span>
+                        <span class="text-slate-400 hover:text-white cursor-pointer">
+                            <i class="text-xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-facebook" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"></path></svg></i>
+                        </span>
+                        <span class="text-slate-400 hover:text-white cursor-pointer">
+                            <i class="text-xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-instagram" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></i>
+                        </span>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-medium mb-4">Product</h4>
+                    <ul class="space-y-3">
+                        <li><span class="hover:text-white cursor-pointer">Platform Overview</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Features</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Integrations</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Pricing</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Security</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-medium mb-4">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><span class="hover:text-white cursor-pointer">Documentation</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Blog</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Case Studies</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Whitepapers</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Webinars</span></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-medium mb-4">Company</h4>
+                    <ul class="space-y-3">
+                        <li><span class="hover:text-white cursor-pointer">About Us</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Careers</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Partners</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Contact</span></li>
+                        <li><span class="hover:text-white cursor-pointer">Legal</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="lg:col-span-2">
+                        <form class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" placeholder="Enter your email" class="bg-slate-800 text-white px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1">
+                            <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition duration-300">
+                                Subscribe to Newsletter
+                            </button>
+                        </form>
+                    </div>
+                    <div class="text-sm text-center lg:text-right">
+                        © 2023 Nexus AI. All rights reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-6 right-6 z-50">
+        <button class="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full p-4 shadow-lg hover:shadow-xl transition duration-300">
+            <i class="text-xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-message" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="message" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64h96v80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416H448c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64z"></path></svg></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Script -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Theme Toggle with dark mode as default
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Set dark mode as default
+        html.classList.add('dark');
+        themeToggle.querySelector('i').classList.remove('fa-moon');
+        themeToggle.querySelector('i').classList.add('fa-sun');
+        
+        themeToggle.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        // Store dark mode as default preference
+        localStorage.setItem('theme', 'dark');
+
+        // Testimonial Carousel
+        const slider = document.getElementById('testimonial-slider');
+        const slideButtons = document.querySelectorAll('[data-slide]');
+        const prevButton = document.getElementById('prev-testimonial');
+        const nextButton = document.getElementById('next-testimonial');
+        
+        let currentSlide = 0;
+        const slideCount = 3;
+        
+        function goToSlide(index) {
+            currentSlide = index;
+            
+            // Update slide position
+            const slideWidth = document.querySelector('#testimonial-slider > div').offsetWidth;
+            slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            
+            // Update indicators
+            slideButtons.forEach((button, i) => {
+                if (i === currentSlide) {
+                    button.classList.remove('bg-slate-300');
+                    button.classList.add('bg-blue-300');
+                } else {
+                    button.classList.remove('bg-blue-300');
+                    button.classList.add('bg-slate-300');
+                }
+            });
+        }
+        
+        // Add click events to indicators
+        slideButtons.forEach((button, index) => {
+            button.addEventListener('click', () => goToSlide(index));
+        });
+        
+        // Prev/Next buttons
+        prevButton.addEventListener('click', () => {
+            goToSlide((currentSlide - 1 + slideCount) % slideCount);
+        });
+        
+        nextButton.addEventListener('click', () => {
+            goToSlide((currentSlide + 1) % slideCount);
+        });
+        
+        // Auto rotate slides
+        setInterval(() => {
+            goToSlide((currentSlide + 1) % slideCount);
+        }, 5000);
+    </script>
+
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></body></html>
